@@ -36,7 +36,7 @@ const Show = props => {
   const filetoHTML = () =>
     files.map(item => (
       <Col md={4}>
-        <div  className="card">
+        <div  className="card"  onClick={() => showImg(item.url)}>
         <Card
           hoverable
           style={{ margin:4}}
