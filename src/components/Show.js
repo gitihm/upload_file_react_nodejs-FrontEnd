@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Modal } from "antd";
-import { List, Typography } from "antd";
+import { Card } from "antd";
+
 import { connect } from "react-redux";
 import {
   upload_file,
@@ -9,10 +10,11 @@ import {
   add_file
 } from "../store/upload/actions";
 const Show = props => {
-  const {  update_files } = props;
-  const {  files } = props.uploadStore;
+  const { update_files } = props;
+  const { files } = props.uploadStore;
   const [visible, setvisible] = useState(false);
   const [nowUrl, setNowUrl] = useState("");
+  const { Meta } = Card;
   useEffect(() => {
     update_files();
   }, []);
@@ -31,6 +33,26 @@ const Show = props => {
   const handleCancel = e => {
     setvisible(false);
   };
+  const filetoHTML = () =>
+    files.map(item => (
+      <Col md={4}>
+        <div  className="card">
+        <Card
+          hoverable
+          style={{ margin:4}}
+         
+          cover={
+            <img
+              alt={item.name}
+              src={item.url}
+              height="200px"
+            />
+          }
+        >
+          <Meta title={item.name}  />
+        </Card></div>
+      </Col>
+    ));
   return (
     <>
       <Row>
@@ -44,7 +66,14 @@ const Show = props => {
           <img src={nowUrl} width="100%" />
         </Modal>
         <Col md={24}>
-          <List
+          <div className="showlist">
+            List Upload
+            <hr />
+            <Row type='flex' justify='center' className="card-position">
+              {filetoHTML()}
+            </Row>
+          </div>
+          {/* <List
             header={<div>List Upload</div>}
             style={{ backgroundColor: "white" }}
             bordered
@@ -54,7 +83,7 @@ const Show = props => {
                 <Typography.Text mark></Typography.Text> {item.name}
               </List.Item>
             )}
-          />
+          /> */}
         </Col>
       </Row>
     </>

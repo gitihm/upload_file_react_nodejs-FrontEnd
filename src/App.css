@@ -36,3 +36,63 @@
     transform: rotate(360deg);
   }
 }
+.title{
+  width: 100vw;
+}
+.showlist{
+  width: 100vw;
+}
+.btn-ok{
+  padding: 10px 20px;
+  color: aliceblue;
+  background-color: blue;
+  border:1px  blue;
+  border-radius: 8px;
+}
+.btn-ok:hover{
+  cursor: pointer;
+  padding: 10px 20px;
+  color: blue;
+  background-color: aliceblue;
+  border:1px  aliceblue;
+  border-radius: 8px;
+}
+.btn-clear{
+  padding: 10px 20px;
+  color: aliceblue;
+  background-color: red;
+  border:1px  red;
+  border-radius: 8px;
+}
+.btn-clear:hover{
+  cursor: pointer;
+  padding: 10px 20px;
+  color: red;
+  background-color: aliceblue;
+  border:1px  aliceblue;
+  border-radius: 8px;
+}
+.card:hover {
+  z-index: 99;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(255, 255, 255, 0.75);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(255, 255, 255, 0.75);
+  box-shadow: 0px 5px 10px 0px rgba(255, 255, 255, 0.75);
+}
+.antd-card{
+  z-index: 10;
+}
+.card-position{
+  z-index: 1;
+}
+.alert-box{
+  position: absolute;
+  z-index: 100;
+  padding-left: 70%;
+  padding-top: 3%;
+}
+/* .alert-success{
+  visibility: hidden;
+}
+.alert-error{
+  visibility: hidden;
+} */
