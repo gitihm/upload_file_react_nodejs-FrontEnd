@@ -12,9 +12,7 @@ const Input = props => {
   const { url_review, url_upload } = props.uploadStore;
   const handleChange = e => {
     add_review(URL.createObjectURL(e.target.files[0]));
-    console.log(e.target.files[0]);
-    console.log(typeof e.target.files[0]);
-    add_file(URL.createObjectURL(e.target.files[0]));
+    add_file(e.target.files[0]);
   };
   const clear = () => {
     add_file({});

@@ -11,7 +11,7 @@ export const uploadReducer = (state = stateUpload, action) => {
     case "UPLOAD_FILE":
       return state;
     case "ADD_FILE":
-        console.log( action.payload);
+        // console.log( action.payload);
         return (state = { ...state, url_upload: action.payload });
       // state.url_upload.append("file", action.payload);
       console.log(state);
